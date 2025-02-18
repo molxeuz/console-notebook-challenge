@@ -23,12 +23,17 @@ class Note:
 class Notebook:
 
     def __init__(self):
-        self.notes: list[str] = []
+        self.notes: list[Note] = []
 
     def add_note(self, title: str, text: str, importance: str) -> int:
 
-        existing_codes = {note.code for note in self.notes}
+        existing_codes = {}
+
+        for note in self.notes:
+            existing_codes[note.code] = True
+
         new_code = 1
+
         while new_code in existing_codes:
             new_code += 1
 
@@ -82,4 +87,4 @@ class Notebook:
 
         most_common_tag = max(tag_counts, key=tag_counts.get)
 
-        return self.consola.print(f"[green] Etiqueta mas comun {most_common_tag} [/green]")
+        return most_common_tag
