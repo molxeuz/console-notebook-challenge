@@ -1,9 +1,9 @@
 from app.console import Console
-from app.model import Notebook
+from app.notebook import Notebook
 
 def main():
     notebook = Notebook()
-    console = Console(notebook)
+    console = Console()
     console.ejecutar()
 
 if __name__ == "__main__":
