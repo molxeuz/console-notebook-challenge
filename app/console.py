@@ -1,7 +1,15 @@
 
 from rich.prompt import Prompt
+from rich.console import Console
 
-class Console:
+from app.notebook import Notebook
+
+
+class ConsoleUI:
+
+    def __init__(self):
+        self.consola = Console()  # Agregamos la inicialización de la consola
+        self.notebook = Notebook()  # También inicializamos el Notebook
 
     def mostrar_menu(self):
 

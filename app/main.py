@@ -1,10 +1,8 @@
-from app.console import Console
-from app.notebook import Notebook
+from app.console import ConsoleUI
 
 def main():
-    notebook = Notebook()
-    console = Console()
-    console.ejecutar()
+    console_ejecutar = ConsoleUI()
+    console_ejecutar.ejecutar()
 
 if __name__ == "__main__":
     main()
